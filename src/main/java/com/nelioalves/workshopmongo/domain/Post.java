@@ -9,6 +9,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.nelioalves.workshopmongo.dto.AuthorDTO;
+import com.nelioalves.workshopmongo.dto.CommentDTO;
 
 
 @Document
@@ -21,13 +22,13 @@ public class Post implements Serializable {
     private String title;
     private String body;
     private AuthorDTO author;
-    private List<Comment> comments = new ArrayList<>();
+    private List<CommentDTO> comments = new ArrayList<>();
 
-    public List<Comment> getComments() {
+    public List<CommentDTO> getComments() {
         return comments;
     }
 
-    public void setComments(List<Comment> comments) {
+    public void setComments(List<CommentDTO> comments) {
         this.comments = comments;
     }
 

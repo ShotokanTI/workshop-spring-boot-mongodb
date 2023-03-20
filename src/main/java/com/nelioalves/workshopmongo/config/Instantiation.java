@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
-import com.nelioalves.workshopmongo.domain.Comment;
 import com.nelioalves.workshopmongo.domain.Post;
 import com.nelioalves.workshopmongo.domain.User;
 import com.nelioalves.workshopmongo.dto.AuthorDTO;
+import com.nelioalves.workshopmongo.dto.CommentDTO;
 import com.nelioalves.workshopmongo.repository.PostRepository;
 import com.nelioalves.workshopmongo.repository.UserRepository;
 
@@ -43,9 +43,9 @@ public class Instantiation implements CommandLineRunner{
 		Post post2 = new Post(null,sdf.parse("23/03/2018"),"Bom dia","Acordei feliz hoje!", new AuthorDTO(maria));
 
 		//add comments
-		Comment comm1 = new Comment(null,"Boa viagem mano!",sdf.parse("21/03/2018"),new AuthorDTO(alex));
-		Comment comm2 = new Comment(null,"Aproveite",sdf.parse("22/03/2018"),new AuthorDTO(bob));
-		Comment comm3 = new Comment(null,"Tenha um ótimo dia!",sdf.parse("23/03/2018"),new AuthorDTO(alex));
+		CommentDTO comm1 = new CommentDTO("Boa viagem mano!",sdf.parse("21/03/2018"),new AuthorDTO(alex));
+		CommentDTO comm2 = new CommentDTO("Aproveite",sdf.parse("22/03/2018"),new AuthorDTO(bob));
+		CommentDTO comm3 = new CommentDTO("Tenha um ótimo dia!",sdf.parse("23/03/2018"),new AuthorDTO(alex));
 
 		post1.getComments().addAll(Arrays.asList(comm1,comm2));
 		post2.getComments().addAll(Arrays.asList(comm3));
